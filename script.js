@@ -4,6 +4,8 @@ fetch('1-100000000.txt')
   .then(response => response.text())
   .then(text => {
     pi = text;
+    document.getElementById('loading').classList.add('invisible-element');
+    document.getElementById('container').classList.remove('invisible-element');
   })
   .catch(error => console.error('Error loading the text file:', error));
 document.addEventListener('DOMContentLoaded', () => {
