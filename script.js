@@ -1,11 +1,13 @@
 // script.js
 var pi = '';
+const allInputs = document.getElementsByTagName('input');
 fetch('1-100000000.txt')
   .then(response => response.text())
   .then(text => {
     pi = text;
     document.getElementById('loading').classList.add('invisible-element');
     document.getElementById('container').classList.remove('invisible-element');
+    allInputs[0].focus();
   })
   .catch(error => console.error('Error loading the text file:', error));
 document.addEventListener('DOMContentLoaded', () => {
@@ -22,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Set the typing speed here (in milliseconds)
   setInterval(typePi, 10);
   const inputs = document.getElementById("inputs");
-  const allInputs = document.getElementsByTagName('input');
   allInputs[0].focus();
 
   inputs.addEventListener("input", function (e) {
