@@ -56,11 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       return;
     }
-
-    if (key === 'enter') {
-      const digits = Array.from(allInputs).map((input) => input.value);
-      showResult(digits.join(''))
-    }
+    const digits = Array.from(allInputs).map((input) => input.value);
+    showResult(digits.join(''))
   });
 });
 
